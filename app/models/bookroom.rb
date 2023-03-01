@@ -1,0 +1,2 @@
+class Bookroom < ApplicationRecord
+end

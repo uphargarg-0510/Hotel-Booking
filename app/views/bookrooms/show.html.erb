@@ -1,0 +1,82 @@
+<p style="color: green"><%= notice %></p>
+
+<%# <div style=" padding:'20px'; " > %>
+<div class="jumbotron" >
+  <h1 class="display-4"><%= @bookroom.first_name+' '+@bookroom.last_name %></h1>
+  <p class="lead"><%= @bookroom.email %></p>
+  <hr class="my-4">
+
+  <table>
+    <tr>
+      <td>
+        <strong>Arrival:</strong>
+        <p class="lead"><%= @bookroom.start_time %></p>
+      </td>
+
+      <td>&nbsp</td>
+
+      <td>
+        <strong>Room Type:</strong>
+        <p class="lead"><%= @bookroom.room_type %></p>
+      </td>
+
+      <td>&nbsp&nbsp&nbsp&nbsp</td>
+
+      <td>
+        <strong>Payment Type:</strong>
+        <p class="lead"><%= @bookroom.payment_type %></p>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <strong>Departure:</strong>
+        <p class="lead"><%= @bookroom.end_time %></p>
+      </td>
+
+      <td>&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+
+      <td>
+        <strong>No. of Rooms:</strong>
+        <p class="lead"><%= @bookroom.no_of_rooms %></p>
+      </td>
+
+      <td>&nbsp&nbsp&nbsp</td>
+
+      <td>
+        <strong>Any Tip:</strong>
+        <p class="lead"><%= @bookroom.tip %></p>
+      </td>
+    </tr>
+
+
+    <tr>
+      <td>
+        <strong>Total Payment:</strong>
+        <p class="lead"><%= @bookroom.total_payment %></p>
+      </td>
+
+    </tr>
+
+    <tr>
+      <td>
+        <%= link_to "Edit Booking", edit_bookroom_path(@bookroom), class: "btn btn-dark btn-sm" %> 
+      </td>
+
+      <td></td>
+
+      <td>
+        <%= button_to "Cancel Booking", @bookroom, method: :delete , class: "btn btn-dark btn-sm"%>
+      </td>
+
+    </tr>
+
+  </table>
+
+
+  
+  
+</div>
+
+<%# </div> %>
+

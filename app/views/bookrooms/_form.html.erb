@@ -1,0 +1,111 @@
+<%= form_with(model: bookroom) do |form| %>
+  <% if bookroom.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(bookroom.errors.count, "error") %> prohibited this bookroom from being saved:</h2>
+
+      <ul>
+        <% bookroom.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <form>
+    <div class="container">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <%# <%= form.label :first_name, style: "display: block" %>
+          <%= form.text_field :first_name, class:"form-control ", placeholder:'First Name' %>
+        </div>
+
+        <div class="form-group col-md-6">
+          <%# <%= form.label :last_name, style: "display: block" %>
+          <%= form.text_field :last_name , class:"form-control ", placeholder:'Last Name'%>
+        </div>
+
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <%# <%= form.label :email, style: "display: block" %> 
+          <%= form.text_field :email, class:"form-control", placeholder:'E-mail' %>
+        </div>
+      </div>
+
+      <div class="form-row " style="margin-top:3px">
+        <div class="form-group col-md-6 form-check " style="margin-top: -5px">
+          <%= form.label :room_type, "Room Type ", class:"form-check-label" %>
+
+          <div style="display: block; margin-left: 20px ;">
+            <%= form.radio_button :room_type, "Luxary",class:"form-check-input" %>
+            <%= form.label :room_type, "Luxary" %>
+            <%= form.radio_button :room_type, "Semi-Luxary" %>
+            <%= form.label :room_type, "Semi-Luxary" %>
+            <%= form.radio_button :room_type, "Non-AC" %>
+            <%= form.label :room_type, "Non-AC" %>
+          </div>
+
+        </div>
+
+        <div class="form-group col-md-6">
+          <%# <%= form.label :no_of_rooms, style: "display: block" %> 
+          <%= form.number_field :no_of_rooms,class:"form-control",placeholder:"No. Of Rooms" %>
+        </div>
+
+        
+      </div>
+
+
+      <div class="form-row" style="margin-top:-7px">
+
+        <div class="form-group col-md-6">
+          <%= form.label :start_time, style: "display: block" %>
+          <%= form.time_field :start_time %>
+        </div>
+
+        <div class="form-group col-md-6">
+          <%= form.label :end_time, style: "display: block" %>
+          <%= form.time_field :end_time %>
+        </div>
+        
+      </div>
+
+
+      <div class="form-row" style="margin-top:5px">
+
+        <div class="form-group col-md-6">
+          <%= form.label :payment_type, "Payment Type ", class:"form-check-label" %>
+          <div style="display: block; margin-left: 20px ;">
+            <%= form.radio_button :payment_type, "UPI",class:"form-check-input" %>
+            <%= form.label :payment_type, "UPI" %>
+            <%= form.radio_button :payment_type, "Cash" %>
+            <%= form.label :payment_type, "Cash" %>
+            <%= form.radio_button :payment_type, "Card" %>
+            <%= form.label :payment_type, "Card" %>
+          </div>
+        </div>
+
+        <div class="form-group col-md-6">
+          <%# <%= form.label :tip, style: "display: block" %> 
+          <%= form.number_field :tip, class:"form-control", placeholder:"Tip To Staff" %>
+        </div>
+
+
+      </div>
+      
+
+
+      <div>
+        <%# <%= form.label :total_payment, style: "display: block" %>
+        <%= form.number_field :total_payment, class:"form-control", placeholder:"Total Bill" %>
+      </div>
+
+      
+
+      <div style="margin-top: 20px ">
+        <%= form.submit class:"btn btn-dark btn-sm" %>
+      </div>
+    </div>
+  </form>
+<% end %>
