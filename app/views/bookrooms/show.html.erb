@@ -2,7 +2,7 @@
 
 <%# <div style=" padding:'20px'; " > %>
 <div class="jumbotron" >
-  <h1 class="display-4"><%= @bookroom.first_name+' '+@bookroom.last_name %></h1>
+  <h1 class="display-5"><%= @bookroom.first_name+' '+@bookroom.last_name %></h1>
   <p class="lead"><%= @bookroom.email %></p>
   <hr class="my-4">
 
@@ -50,10 +50,18 @@
     </tr>
 
 
+    <% roomcost=0 %> 
+    <% if @bookroom.room_type=="Luxary" %>
+       <% roomcost = (@bookroom.no_of_rooms * 1000) %>
+      <% @bookroom.total_payment= roomcost + (@bookroom.tip) %>
+    <% end %>
+
     <tr>
       <td>
         <strong>Total Payment:</strong>
-        <p class="lead"><%= @bookroom.total_payment %></p>
+        <p class="lead"><%= "No. of Room x Cost of 1 Room : Rs-"  %> <%=  roomcost %></p> 
+        <p class="lead"><%= "Tip To Hotel Staff           : Rs-"  %> <%=  @bookroom.tip %></p> 
+        <p class="lead"><%= "Total     : Rs-   "  %><%=@bookroom.total_payment %></p>
       </td>
 
     </tr>

@@ -15,7 +15,7 @@
       <th>Any Tip</th>
       <th>Total Payment</th>
       
-      <th></th>
+      <%# <th></th> %>
     </tr>
   </thead>
 
@@ -34,9 +34,9 @@
           <td><%= bookroom.end_time %></td>
           <td><%= bookroom.payment_type %></td>
           <td><%= bookroom.tip %></td>
-          <td><%= bookroom.total_payment %></td>
+          <%# <td><%= bookroom.total_payment %></td>
           <td>
-            <%= link_to 'Show Details', bookroom, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-dark btn-sm" %>
+            <%= link_to 'Show Bill', bookroom, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-dark btn-sm" %>
           </td>
           
       
