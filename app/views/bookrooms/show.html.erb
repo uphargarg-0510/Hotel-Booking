@@ -56,6 +56,16 @@
       <% @bookroom.total_payment= roomcost + (@bookroom.tip) %>
     <% end %>
 
+    <% if @bookroom.room_type=="Semi-Luxary" %>
+       <% roomcost = (@bookroom.no_of_rooms * 750) %>
+      <% @bookroom.total_payment= roomcost + (@bookroom.tip) %>
+    <% end %>
+
+    <% if @bookroom.room_type=="Non-AC" %>
+       <% roomcost = (@bookroom.no_of_rooms * 500) %>
+      <% @bookroom.total_payment= roomcost + (@bookroom.tip) %>
+    <% end %>
+
     <tr>
       <td>
         <strong>Total Payment:</strong>
